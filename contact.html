@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AJ Accountancy</title>
+    <link rel="stylesheet" href="./assets/css/main.css?v=aj8">
+    <link rel="stylesheet" href="./assets/css/responsive.css?v=aj8">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="hero-container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="navbar-nav-container">
+                
+                    <!-- Logo Container -->
+                    <div class="navbar-logo-container">
+                        <a class="navbar-brand fw-bold" href="#">
+                            <img src="./assets/images/AJ-Accountancy-Logo.png" alt="AJ Accountancy Logo" class="img-fluid">
+                        </a>
+                    </div>
+                
+                    <!-- Nav Link Container -->
+                    <div class="nav-link-container">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about.html">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./service.html">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./single-sevice.html">Services Details</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contact.html">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <button class="nav-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                
+                    <!-- Navbar Social Container -->
+                    <div class="navbar-cta-container">
+                        <i class="fa-solid fa-phone-square navbar-cta-icon"></i>
+                        <div class="d-flex flex-column">
+                            <h6 class="secondary-accent">Phone Number</h6>
+                            <p class="secondary-accent m-0">020 8778 8666</p>
+                        </div>
+                    </div>
+                
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Section -->
+    <aside>
+        <div class="sidebar-overlay"></div>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <button class="sidebar-close-btn"><span>X</span></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./service.html">Services</a></li>
+                <li><a href="./single-sevice.html">Services Details</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Banner Page Section -->
+        <section class="section banner-page banner-contact">
+            <div class="hero-container">
+                <div class="banner-page__inner-container">
+                    <h1>Contact Us Today</h1>
+                    <nav class="breadcrumb">
+                        <a href="./index.html">Home</a>
+                        <span class="separator">/</span>
+                        <a href="#" class="current">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section">
+            <div class="hero-container overflow-hidden">
+                <div class="row row-cols-lg-3 row-cols-1 grid-gap-5">
+                    <div class="col">
+                        <div class="d-flex flex-column flex-gap-2">
+                            <span class="sub-heading">Get in Touch</span>
+	                            <h2>Talk to AJ Accountancy</h2>
+	                            <div>
+	                                <p>Whether you are starting a new business, switching accountants, or seeking expert tax advice, we are here to help.</p>
+	                                <p>Book your free initial consultation today and benefit from over 40 years of trusted experience.</p>
+	                            </div>
+	                            <h4>Direct Contact</h4>
+	                            <div class="d-flex flex-row align-items-center flex-gap-1">
+	                                <a href="tel:02087788666" class="social-icon-contact">
+	                                    <i class="fa-solid fa-phone"></i>
+	                                </a>
+	                                <a href="tel:+447484095669" class="social-icon-contact">
+	                                    <i class="fa-solid fa-mobile-screen"></i>
+	                                </a>
+	                                <a href="mailto:info@ajaccountancy.co.uk" class="social-icon-contact">
+	                                    <i class="fa-solid fa-envelope"></i>
+	                                </a>
+	                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="d-flex flex-column flex-gap-2">
+
+                            <div class="alert success success-message-contact hidden">
+                                <span class="check-icon"><i class="fa-solid fa-2xl fa-check"></i></span>
+                                <p>Thank you! Form submitted successfully.</p>
+                            </div>
+                            
+                            <div class="alert error error-message-contact hidden">
+                                <span class="cross-icon"><i class="fa-solid fa-2xl fa-xmark"></i></span>
+                                <p>Oops! Form submission failed. Please try again.</p>
+                            </div>
+
+                            <div class="card__contact-card">
+	                                <h4 class="text-center">Have a question or need a consultation?</h4>
+                                <form id="contact-form" action="#" method="post" class="form">
+                                    <div class="row row-cols-md-2 row-cols-1 grid-gap-3">
+                                        <div class="col">
+                                            <input type="text" name="name" id="name" placeholder="Full Name">
+                                        </div>
+                                        <div class="col">
+                                            <input type="email" name="email" id="email" placeholder="Email Address">
+                                        </div>
+                                    </div>
+                                    <input type="text" name="subject" id="subject" placeholder="Subject">
+                                    <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                                    <button type="submit" class="btn btn-accent">
+                                        <span class="btn-title">Send Message</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="d-flex flex-column flex-gap-4">
+                            <h4>Contact Information</h4>
+
+                            <div class="contact__info-item-container">
+
+	                                <div class="contact__info-item">
+	                                    <i class="fa-solid fa-phone contact-info-icon"></i>
+                                    <div class="d-flex flex-column flex-gap-1">
+	                                        <h5>Phone</h5>
+	                                        <h6>020 8778 8666</h6>
+                                    </div>
+                                </div>
+    
+	                                <div class="contact__info-item">
+	                                    <i class="fa-solid fa-mobile-screen contact-info-icon"></i>
+                                    <div class="d-flex flex-column flex-gap-1">
+	                                        <h5>Mobile</h5>
+	                                        <h6>+44 7484 095669</h6>
+                                    </div>
+                                </div>
+    
+	                                <div class="contact__info-item">
+	                                    <i class="fa-solid fa-envelope contact-info-icon"></i>
+                                    <div class="d-flex flex-column flex-gap-1">
+	                                        <h5>Email</h5>
+	                                        <h6>info@ajaccountancy.co.uk</h6>
+                                    </div>
+                                </div>
+    
+	                                <div class="contact__info-item">
+	                                    <i class="fa-solid fa-location-dot contact-info-icon"></i>
+                                    <div class="d-flex flex-column flex-gap-1">
+	                                        <h5>Head Office</h5>
+	                                        <h6>43 Anerley Road, Crystal Palace, London, SE19 2AS</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maps Section -->
+        <section class="section p-0">
+	            <iframe loading="lazy" class="maps"
+	                src="https://maps.google.com/maps?q=43%20Anerley%20Road%2C%20Crystal%20Palace%2C%20London%2C%20SE19%202AS&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=near"
+	                title="43 Anerley Road, Crystal Palace, London, SE19 2AS" aria-label="43 Anerley Road, Crystal Palace, London, SE19 2AS">
+            </iframe>
+        </section>
+
+        <!-- FAQs Section -->
+        <section class="section">
+            <div class="hero-container">
+                <div class="faq__inner-container">
+                    <div class="faq__heading-container">
+                        <span class="sub-heading">Got Questions?</span>
+                        <h2>Answers to Common Accounting & Tax Inquiries</h2>
+                    </div>
+
+                    <div class="row row-cols-md-2 row-cols-1 grid-gap-2">
+                        <div class="col">
+                            <div class="accordion" id="accordion-faq-1">
+                                <div class="accordion-item">
+                                    <span class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-colapse-one" aria-expanded="true" aria-controls="faq-colapse-one">
+	                                            What's the best way to contact AJ Accountancy?
+                                        </button>
+                                    </span>
+                                    <div id="faq-colapse-one" class="accordion-collapse collapse show" data-bs-parent="#accordion-faq-1">
+                                        <div class="accordion-body">
+	                                            <p class="m-0">You can call 020 8778 8666, phone +44 7484 095669, email info@ajaccountancy.co.uk, or send a message using the contact form.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <span class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-colapse-two" aria-expanded="false" aria-controls="faq-colapse-two">
+	                                            Do you offer a free initial consultation?
+                                        </button>
+                                    </span>
+                                    <div id="faq-colapse-two" class="accordion-collapse collapse" data-bs-parent="#accordion-faq-1">
+                                        <div class="accordion-body">
+	                                            <p class="m-0">Yes. You can book a free initial consultation to discuss your accounting, tax, or business support needs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <span class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-colapse-three" aria-expanded="false" aria-controls="faq-colapse-three">
+	                                            Who do you work with?
+                                        </button>
+                                    </span>
+                                    <div id="faq-colapse-three" class="accordion-collapse collapse" data-bs-parent="#accordion-faq-1">
+                                        <div class="accordion-body">
+	                                            <p class="m-0">We support individuals, sole traders, contractors, startups, landlords, and limited companies across the UK.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <span class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-colapse-four" aria-expanded="false" aria-controls="faq-colapse-four">
+	                                            Can I get help with HMRC correspondence?
+                                        </button>
+                                    </span>
+                                    <div id="faq-colapse-four" class="accordion-collapse collapse" data-bs-parent="#accordion-faq-1">
+                                        <div class="accordion-body">
+	                                            <p class="m-0">Yes. We provide HMRC correspondence support, enquiry assistance, and tax investigation support.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="accordion" id="accordion-faq-2">
+                                <div class="accordion-item">
+                                    <span class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-colapse-five" aria-expanded="true" aria-controls="faq-colapse-five">
+	                                            Which accounting software do you support?
+                                        </button>
+                                    </span>
+                                    <div id="faq-colapse-five" class="accordion-collapse collapse show" data-bs-parent="#accordion-faq-2">
+                                        <div class="accordion-body">
+	                                            <p class="m-0">We support Sage, Xero, QuickBooks, FreeAgent, and QuickFile, including setup, training, migration, and ongoing support.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <span class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-colapse-six" aria-expanded="false" aria-controls="faq-colapse-six">
+	                                            Do you help limited companies?
+                                        </button>
+                                    </span>
+                                    <div id="faq-colapse-six" class="accordion-collapse collapse" data-bs-parent="#accordion-faq-2">
+                                        <div class="accordion-body">
+	                                            <p class="m-0">Yes. We provide company accounts preparation, corporation tax returns, VAT services, payroll, confirmation statements, and director tax planning.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <span class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-colapse-seven" aria-expanded="false" aria-controls="faq-colapse-seven">
+	                                            Where are you based?
+                                        </button>
+                                    </span>
+                                    <div id="faq-colapse-seven" class="accordion-collapse collapse" data-bs-parent="#accordion-faq-2">
+                                        <div class="accordion-body">
+	                                            <p class="m-0">We are based at 43 Anerley Road, Crystal Palace, London, SE19 2AS, and support clients across the UK.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <span class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-colapse-eight" aria-expanded="false" aria-controls="faq-colapse-eight">
+	                                            Can you help me switch accountants?
+                                        </button>
+                                    </span>
+                                    <div id="faq-colapse-eight" class="accordion-collapse collapse" data-bs-parent="#accordion-faq-2">
+                                        <div class="accordion-body">
+	                                            <p class="m-0">Yes. If you are switching accountants, we can guide you through the process and help organise the information needed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-banner">
+            <div class="hero-container overflow-hidden">
+                <div class="footer__highlight-text-container">
+                    <span class="footer__highlight-text-fill">
+                        Let's
+                    </span>
+                    <span class="footer__highlight-text-outline">
+                        Connect
+                    </span>
+                </div>
+
+                <div class="footer__content-wrapper">
+                    <div class="footer__inner-container">
+                        <div class="card card__footer-info">
+                            <div class="image-container footer__logo">
+                                <img src="./assets/images/AJ-Accountancy-Logo.png" alt="AJ Accountancy Logo">
+                            </div>
+                            <p class="secondary-accent m-0">Trusted accountants in Crystal Palace with over 40 years of experience supporting individuals, sole traders, contractors, startups, and limited companies across the UK.</p>
+                            <div class="d-flex flex-row align-items-center flex-gap-1">
+                                <a href="#" class="social-icon">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fa-brands fa-pinterest"></i>
+                                </a>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card card__footer-quick-links">
+                            <h4>Quick Links</h4>
+                            <ul class="circle-check-list">
+                                <li><a href="./index.html">Home</a></li>
+                                <li><a href="./about.html">About Us</a></li>
+                                <li><a href="./service.html">Services</a></li>
+                                <li><a href="./single-sevice.html">Services Details</a></li>
+                                <li><a href="./contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__copyright-wrapper">
+                    <div class="footer__copyright-container">
+                        <h6>© 2026 AJ Accountancy & Taxation Services Limited. All Rights Reserved</h6>
+
+                        <div class="d-flex flex-row align-items-center flex-gap-3">
+                            <a href="tel:02087788666" class="footer-legallink">020 8778 8666</a>
+                            <a href="mailto:info@ajaccountancy.co.uk" class="footer-legallink">info@ajaccountancy.co.uk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Js Script -->
+    <script src="./assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/vendor/swiper.min.js"></script>
+    <script src="./assets/js/vendor/flatpickr.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/form-script.js"></script>
+    <script src="./assets/js/swiper-script.js"></script>
+</body>
+</html>

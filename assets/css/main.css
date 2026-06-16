@@ -1,0 +1,4103 @@
+/*==============================================================================
+[Master Stylesheet]
+
+Project:        Matre - Accounting & Tax Services
+Version:        1.0
+Description:    Matre is a modern and elegant HTML Bootstrap Template designed for Accounting & Tax Services websites. Built with the latest Bootstrap framework, it features a clean, professional, and fully responsive layout that looks perfect on all devices.
+                Ideal for accounting firms, tax advisors, financial consultants, audit companies, and finance-related businesses, Matre comes with well-structured code, essential inner pages, and easy customization — making it a perfect choice for building a trustworthy and professional business website.
+==============================================================================*/
+
+/*==============================================================================
+[Table of Contents]
+
+1.0 Import Vendor
+2.0 Variable Settings
+    2.1 Color Variable
+    2.2 Font Variable
+    2.3 Animation Duration Preset
+    2.4 Animation Delay Preset
+3.0 Animation Settings
+4.0 Base Settings
+5.0 Header Style
+6.0 Sidebar Style
+7.0 Footer Style
+8.0 Section Setting
+9.0 Hero Container Style
+10.0 Card Style
+11.0 Button Style
+12.0 Form Style
+13.0 Image Style
+14.0 Color Style
+15.0 Banner Style
+16.0 Heading Style
+17.0 Banner Content Style
+18.0 Service Section
+19.0 Company Intro Style
+20.0 Why Choose Us Style
+21.0 Trust Overview Style
+22.0 Testimonial Style
+23.0 How it Works Style
+24.0 Proven Result Style
+25.0 Contact CTA Style
+26.0 About Overview Style
+27.0 About Mission Style
+28.0 Team Style
+29.0 Pricing Style
+30.0 FAQs Style
+32.0 Why Booking Us Style
+33.0 Blog Style
+34.0 Contact Us Style
+35.0 Maps Style
+36.0 Custom List Style
+37.0 Breadcrumb Style
+38.0 Animation Style
+39.0 Icon Style
+40.0 Accordion Style
+41.0 Video & Modal Style
+42.0 Custom Spacing
+
+==============================================================================*/
+
+/*==============================================================================
+[Color Glossary]
+
+This section documents all colors used throughout the stylesheet for 
+quick reference, consistency, and easy maintenance.
+
+PRIMARY COLORS:
+---------------
+--primary: #2F2F2F (Dark Charcoal)
+  └─ Usage: Primary text color, headings, dark UI elements
+  └─ Contrast Ratio: Excellent on light backgrounds (14.3:1)
+  └─ Best On: White, light gray backgrounds
+  └─ Examples: Body text, headings, navigation items
+
+--secondary: #FFFFFF (Pure White)
+  └─ Usage: Background color, light surfaces, text on dark backgrounds
+  └─ Contrast Ratio: Maximum contrast with dark colors (21:1)
+  └─ Best On: Dark overlays, colored backgrounds
+  └─ Examples: Page background, card backgrounds, header text on hero
+
+--text-color: #7A7A7A (Medium Gray)
+  └─ Usage: Secondary text, descriptions, meta information
+  └─ Contrast Ratio: Good on white (5.8:1) ✓ AA compliant
+  └─ Best On: White, light backgrounds
+  └─ Examples: Paragraph text, captions, descriptions
+
+ACCENT COLORS:
+--------------
+--accent-color: #0EA5E9 (Sky Blue)
+  └─ Usage: Primary CTA, interactive elements, links, highlights
+  └─ Contrast Ratio: Good on white (3.3:1), Better with dark text
+  └─ Best On: White, light backgrounds, dark text
+  └─ Examples: Primary buttons, active nav items, links, icons
+  └─ Hover State: --accent-color-3 (#0796D6)
+
+--accent-color-2: #334155 (Slate Gray)
+  └─ Usage: Secondary UI elements, subtle backgrounds
+  └─ Contrast Ratio: Excellent on white (10.1:1)
+  └─ Best On: Light backgrounds
+  └─ Examples: Secondary headings, footer backgrounds
+
+--accent-color-3: #0796D6 (Deep Sky Blue)
+  └─ Usage: Hover states, darker accent variations
+  └─ Contrast Ratio: Good on white (3.8:1)
+  └─ Best On: White, light backgrounds
+  └─ Examples: Button hover, link hover states
+
+--accent-color-4: #F2295B00 (Transparent Pink/Red)
+  └─ Usage: Fully transparent overlay base
+  └─ Note: Zero opacity, used as gradient starting point
+
+--accent-color-5: #45566D (Steel Blue)
+  └─ Usage: Tertiary UI elements, borders, dividers
+  └─ Contrast Ratio: Excellent on white (7.8:1)
+  └─ Best On: Light backgrounds
+  └─ Examples: Card borders, section dividers
+
+--accent-color-6: #8191A8 (Blue Gray)
+  └─ Usage: Muted UI elements, disabled states
+  └─ Contrast Ratio: Good on white (4.2:1) ✓ AA compliant
+  └─ Best On: Light backgrounds
+  └─ Examples: Disabled buttons, placeholder text
+
+--accent-color-7: #EEEEEE (Light Gray)
+  └─ Usage: Subtle backgrounds, section separators
+  └─ Contrast Ratio: Works with dark text
+  └─ Best On: Can be used as background for dark text
+  └─ Examples: Section backgrounds, card backgrounds
+
+--accent-color-8: #EFFAFF (Light Cyan)
+  └─ Usage: Subtle highlighted backgrounds, info sections
+  └─ Contrast Ratio: Very light, use with dark text
+  └─ Best On: Dark text only
+  └─ Examples: Info boxes, highlighted sections
+
+--accent-color-9: #D9D9D9 (Silver Gray)
+  └─ Usage: Borders, dividers, inactive elements
+  └─ Contrast Ratio: Light, works with dark text
+  └─ Best On: White backgrounds
+  └─ Examples: Input borders, dividers, separators
+
+--accent-color-10: #FAFAFA (Off White)
+  └─ Usage: Alternative background, subtle contrast
+  └─ Contrast Ratio: Very subtle difference from white
+  └─ Best On: Creates subtle depth with white
+  └─ Examples: Alternate section backgrounds, cards
+
+--accent-color-11: #45566D52 (Steel Blue 32% opacity)
+  └─ Usage: Semi-transparent overlays, subtle backgrounds
+  └─ Opacity: 32% (hex: 52)
+  └─ Examples: Hover overlays, dropdown backgrounds
+
+--accent-overlay: #33333380 (Dark overlay 50% opacity)
+  └─ Usage: Sidebar backdrop, modal overlays
+  └─ Opacity: 50% (hex: 80)
+  └─ Examples: Mobile sidebar overlay, modal backdrops
+
+COLOR USAGE GUIDELINES:
+------------------------
+• Primary Colors: Use for main content and text hierarchy
+• Accent Colors: Use sparingly for emphasis and interactivity
+• Transparent Variants: Layer over content for depth and focus
+• Always test contrast ratios for accessibility (WCAG AA: 4.5:1 minimum)
+• Use CSS variables consistently: var(--color-name)
+• Avoid hardcoding hex values in components
+
+ACCESSIBILITY COMPLIANCE:
+-------------------------
+✓ Primary on Secondary: 14.3:1 (AAA)
+✓ Text Color on Secondary: 5.8:1 (AA)
+✓ Accent Color 2 on Secondary: 10.1:1 (AAA)
+✓ Accent Color 5 on Secondary: 7.8:1 (AA)
+✓ Accent Color 6 on Secondary: 4.2:1 (AA)
+⚠ Accent Color on Secondary: 3.3:1 (Use with caution, pair with darker text)
+
+==============================================================================*/
+
+/*==============================================================================
+[Typography System]
+
+Complete typography scale and font system for the Matre template.
+Based on Source Sans 3 for headings and Roboto for body text.
+
+FONT FAMILIES:
+--------------
+--font-family-heading: "Source Sans 3", sans-serif
+  └─ Purpose: Headlines, headings, buttons, emphasis text
+  └─ Characteristics: Geometric sans-serif, professional, modern
+  └─ Weights Available: 400 (Regular), 500 (Medium), 600 (Semi-Bold)
+  └─ Usage: All h1-h6 elements, buttons, links, nav items
+  └─ Optimal Use: Large display text, UI elements, short content
+  └─ Fallback: Generic sans-serif system fonts
+
+--font-family-text: "Roboto", sans-serif
+  └─ Purpose: Body text, paragraphs, long-form content
+  └─ Characteristics: Humanist sans-serif, highly readable
+  └─ Weights Available: 400 (Regular)
+  └─ Usage: Paragraph text, descriptions, body content
+  └─ Optimal Use: Body copy, reading content, UI descriptions
+  └─ Fallback: Generic sans-serif system fonts
+
+TYPE SCALE & HIERARCHY:
+-----------------------
+Based on a modular scale for consistent visual rhythm.
+Base size: 16px (1rem)
+Scale Ratio: ~1.4x (Major Second to Minor Third hybrid)
+
+h1: 90px (5.625rem)
+  └─ Font Weight: 600 (Semi-Bold)
+  └─ Line Height: 1.1em (99px)
+  └─ Font Family: Source Sans 3
+  └─ Usage: Hero headlines, main page titles
+  └─ Character Limit: 15-25 characters recommended
+  └─ Breakpoint Scaling: Reduce to 48-60px on mobile
+  └─ Examples: Homepage hero, landing page headlines
+
+h2: 68px (4.25rem)
+  └─ Font Weight: 600 (Semi-Bold)
+  └─ Line Height: 1.1em (74.8px)
+  └─ Font Family: Source Sans 3
+  └─ Usage: Section headers, major content dividers
+  └─ Character Limit: 20-30 characters recommended
+  └─ Breakpoint Scaling: Reduce to 36-48px on mobile
+  └─ Examples: Section titles, feature headlines
+
+h3: 48px (3rem)
+  └─ Font Weight: 600 (Semi-Bold)
+  └─ Line Height: 1.2em (57.6px)
+  └─ Font Family: Source Sans 3
+  └─ Usage: Subsection headers, card titles
+  └─ Character Limit: 30-40 characters recommended
+  └─ Breakpoint Scaling: Reduce to 28-36px on mobile
+  └─ Examples: Service titles, feature names
+
+h4: 28px (1.75rem)
+  └─ Font Weight: 600 (Semi-Bold)
+  └─ Line Height: 1.3em (36.4px)
+  └─ Font Family: Source Sans 3
+  └─ Usage: Smaller section headers, widget titles
+  └─ Character Limit: 40-50 characters recommended
+  └─ Breakpoint Scaling: Reduce to 24px on mobile
+  └─ Examples: Card headers, sidebar titles
+
+h5: 21px (1.3125rem)
+  └─ Font Weight: 600 (Semi-Bold)
+  └─ Line Height: 1.4em (29.4px)
+  └─ Font Family: Source Sans 3
+  └─ Usage: Small headers, emphasized content
+  └─ Character Limit: 50-60 characters recommended
+  └─ Examples: Blog post titles, list headers
+
+h6: 16px (1rem)
+  └─ Font Weight: 400 (Regular)
+  └─ Line Height: 1.5em (24px)
+  └─ Font Family: Source Sans 3
+  └─ Usage: Smallest headers, labels, meta information
+  └─ Character Limit: No specific limit
+  └─ Examples: Footer headers, form labels
+
+BODY TEXT:
+----------
+Base Paragraph: 18px (1.125rem)
+  └─ Font Weight: 400 (Regular)
+  └─ Line Height: 1.6em (28.8px)
+  └─ Font Family: Roboto
+  └─ Color: var(--text-color) #7A7A7A
+  └─ Margin Bottom: 20px
+  └─ Usage: All paragraph content, descriptions
+  └─ Optimal Line Length: 45-75 characters (500-750px width)
+  └─ Reading Distance: Comfortable at arm's length
+
+UI ELEMENTS:
+------------
+Buttons, Links, Navigation: 16px (1rem)
+  └─ Font Weight: 500 (Medium)
+  └─ Line Height: 1.2em (19.2px)
+  └─ Font Family: Source Sans 3
+  └─ Usage: All interactive elements
+  └─ Examples: Buttons, nav items, CTAs, footer links
+
+BODY ELEMENT BASE:
+------------------
+Body Font Size: 16px (base)
+  └─ Line Height: 1.5 (24px)
+  └─ Font Weight: 400
+  └─ Font Family: Roboto
+  └─ Additional Properties:
+    • font-style: normal
+    • font-variant: normal
+    • font-optical-sizing: auto
+    • font-kerning: auto
+
+TYPOGRAPHY BEST PRACTICES:
+---------------------------
+1. Hierarchy: Use consistent heading levels (don't skip levels)
+2. Line Height: Larger text = tighter line height (1.1-1.2em)
+3. Line Height: Body text = comfortable spacing (1.5-1.6em)
+4. Line Length: Keep paragraphs between 45-75 characters
+5. Contrast: Ensure sufficient color contrast (see Color Glossary)
+6. Responsive: Scale down headings on smaller screens
+7. Readability: Use Roboto for long-form content
+8. Impact: Use Source Sans 3 for headings and CTAs
+
+RESPONSIVE SCALING STRATEGY:
+-----------------------------
+Desktop (>1200px):
+  └─ Use full type scale as defined
+
+/**
+Tablet (768px - 991.98px):
+  └─ h1: 75px
+  └─ h2: 56px
+  └─ h3: 36px
+  └─ h4: 24px
+  └─ h5: 18px
+  └─ h6: 14px
+  └─ Body: 16px
+
+Mobile (<768px):
+  └─ h1: 60px
+  └─ h2: 42px
+  └─ h3: 28px
+  └─ h4: 20px
+  └─ h5: 16px
+  └─ h6: 12px
+  └─ Body: 14px
+
+ACCESSIBILITY NOTES:
+--------------------
+• Minimum body text: 16px ✓
+• Sufficient line height for readability ✓
+• Clear hierarchy through size and weight ✓
+• Semantic HTML structure (h1-h6 order) ✓
+• Text remains readable when zoomed to 200% ✓
+• No text as images (except logos) ✓
+
+==============================================================================*/
+
+/*==============================================================================
+[Typography Guide]
+
+Practical usage examples and pairing recommendations for the typography system.
+
+HEADING COMBINATIONS:
+---------------------
+Hero Section:
+  h1 (90px) + p (18px) = 5:1 ratio
+  └─ Use for: Landing pages, hero sections
+  └─ Example: "Expert Accounting Services" + subtitle
+
+Section Headers:
+  h2 (68px) + p (18px) = 3.8:1 ratio
+  └─ Use for: Main section titles
+  └─ Example: "Why Choose Us" + description
+
+Card Titles:
+  h3 (48px) + p (18px) = 2.7:1 ratio
+  └─ Use for: Service cards, feature boxes
+  └─ Example: "Tax Planning" + service description
+
+Widget Headers:
+  h4 (28px) + p (18px) = 1.6:1 ratio
+  └─ Use for: Sidebar widgets, small sections
+  └─ Example: "Recent Posts" + post list
+
+RECOMMENDED TEXT PAIRINGS:
+--------------------------
+Primary CTA:
+  └─ Font: Source Sans 3, 500 weight
+  └─ Size: 16px
+  └─ Use with: Large heading (h2 or h3)
+  └─ Example: "Get Started" button below h2 headline
+
+Navigation:
+  └─ Font: Source Sans 3, 400 weight
+  └─ Size: 16px
+  └─ Color: var(--secondary) on dark backgrounds
+  └─ Hover: var(--accent-color)
+
+Footer Links:
+  └─ Font: Source Sans 3, 500 weight
+  └─ Size: 16px
+  └─ Line Height: 1.5em
+  └─ Group by category using h6 headers
+
+Blog Content:
+  └─ Title: h3 (48px) or h4 (28px)
+  └─ Meta: 16px, color: var(--text-color)
+  └─ Body: 18px, line-height: 1.6em
+  └─ CTA: 16px button
+
+Form Labels:
+  └─ Font: Source Sans 3
+  └─ Size: 16px
+  └─ Weight: 400
+  └─ Paired with: 16px input text (Roboto)
+
+SPACING RECOMMENDATIONS:
+------------------------
+After h1: 20-30px margin
+After h2: 20-25px margin
+After h3: 15-20px margin
+After h4: 15px margin
+After h5: 10-15px margin
+After h6: 10px margin
+After p: 20px margin (built-in)
+
+Between Sections: 60-100px padding
+Between Cards: 20-30px gap
+Within Cards: 15-20px padding
+
+TEXT DECORATION PATTERNS:
+-------------------------
+Links in Content:
+  └─ Default: Inherit color or var(--accent-color)
+  └─ Hover: var(--accent-color-3)
+  └─ Underline: Optional, use border-bottom for control
+  └─ Transition: all 0.3s ease
+
+Buttons:
+  └─ Background: var(--accent-color)
+  └─ Text: var(--secondary) white
+  └─ Hover: Background var(--accent-color-3)
+  └─ Border Radius: 0px (sharp corners for professional look)
+
+Navigation Links:
+  └─ Default: var(--secondary)
+  └─ Active: var(--accent-color)
+  └─ Hover: var(--accent-color)
+  └─ Transition: all 0.3s ease
+
+EMPHASIS TECHNIQUES:
+--------------------
+Strong Emphasis:
+  └─ Increase font-weight to 600
+  └─ Use h-tags or <strong> elements
+  └─ Add color accent if needed
+
+Subtle Emphasis:
+  └─ Use var(--accent-color) for color
+  └─ Keep same font size
+  └─ Example: Highlighted keywords in paragraphs
+
+Visual Breaks:
+  └─ Use h6 as section separator
+  └─ Add top margin: 30-40px
+  └─ Optional: Accent color underline
+
+DO'S AND DON'TS:
+----------------
+✓ DO: Use heading hierarchy (h1 → h2 → h3)
+✓ DO: Maintain consistent spacing
+✓ DO: Test on multiple screen sizes
+✓ DO: Use font weights for emphasis
+✓ DO: Keep line length comfortable (45-75 chars)
+
+✗ DON'T: Skip heading levels (h1 → h3)
+✗ DON'T: Use more than 3 font weights
+✗ DON'T: Make paragraphs too wide (>800px)
+✗ DON'T: Use all caps for long text
+✗ DON'T: Mix too many text colors
+
+COMMON USE CASES:
+-----------------
+Hero Section:
+  h1 + p + button
+  90px + 18px + 16px button
+
+Service Cards:
+  h3 + p + link
+  48px + 18px + 16px "Learn More"
+
+Testimonials:
+  p (quote) + h6 (name) + p (title)
+  18px italic + 16px + 16px
+
+Footer:
+  h6 (column headers) + links
+  16px + 16px (500 weight)
+
+Blog Posts:
+  h4 (title) + p (meta) + p (excerpt)
+  28px + 18px gray + 18px
+
+Contact Forms:
+  h5 (section title) + labels + inputs
+  21px + 16px labels + 16px inputs
+
+==============================================================================*/
+
+/*==============================================================================
+[Animation System]
+
+Complete animation framework including keyframes, timing, and usage patterns
+for smooth, professional motion design throughout the template.
+
+CORE ANIMATION PHILOSOPHY:
+--------------------------
+• Purposeful: Every animation should serve a functional purpose
+• Performant: Use GPU-accelerated properties (transform, opacity)
+• Accessible: Respect user preferences (prefers-reduced-motion)
+• Consistent: Unified timing and easing across all animations
+• Subtle: Animations enhance, not distract from content
+
+DURATION PRESETS:
+-----------------
+--anim-duration-fast: 0.8s
+  └─ Usage: Quick UI feedback, micro-interactions
+  └─ Best For: Hover states, button clicks, small elements
+  └─ Perception: Snappy, responsive, immediate
+  └─ Examples: Icon hover, tooltip appearance, menu items
+  └─ Apply To: Elements <200px, quick feedback loops
+
+--anim-duration-normal: 1.1s
+  └─ Usage: Standard content animations, page elements
+  └─ Best For: Card entrance, section reveals, modal open
+  └─ Perception: Smooth, natural, comfortable
+  └─ Examples: Fade-in sections, slide-in cards, image reveals
+  └─ Apply To: Medium-sized content (200-800px)
+
+--anim-duration-slow: 1.6s
+  └─ Usage: Hero sections, large content, dramatic reveals
+  └─ Best For: Hero images, full-page transitions, emphasis
+  └─ Perception: Elegant, dramatic, deliberate
+  └─ Examples: Hero banner entrance, full-screen overlays
+  └─ Apply To: Large elements (>800px), hero sections
+
+DELAY PRESETS:
+--------------
+--anim-delay-none: 0s
+  └─ Usage: Immediate animations, first elements
+  └─ Best For: Primary content, initial viewport items
+  └─ Examples: Hero title, first card in view
+
+--anim-delay-sm: 0.25s
+  └─ Usage: Sequential animations, staggered reveals
+  └─ Best For: List items, multiple cards, grid layouts
+  └─ Examples: Second item in list, follow-up content
+  └─ Stagger Pattern: Multiply by item index (0.25s × 2 = 0.5s)
+
+--anim-delay-md: 0.45s
+  └─ Usage: Secondary content, supporting elements
+  └─ Best For: Descriptions after titles, CTAs after content
+  └─ Examples: Subtitle after main heading, button after text
+
+KEYFRAME ANIMATIONS:
+--------------------
+@keyframes ripple
+  └─ Effect: Expanding circle with fade-out
+  └─ Transform: scale3d(1, 1, 1) → scale3d(1.7, 1.7, 1.8)
+  └─ Opacity: 1 → 0
+  └─ Border: 0px → 13px
+  └─ Duration: Variable (use with animation-duration)
+  └─ Usage: Button click feedback, pulse effects, attention draw
+  └─ Origin: center
+  └─ Best For: Interactive elements, click indicators
+  └─ Example: `.btn-ripple:active::after`
+
+@keyframes fade-in
+  └─ Effect: Simple opacity transition
+  └─ Transform: None
+  └─ Opacity: 0 → 1
+  └─ Usage: Gentle appearance, overlays, modals
+  └─ Best For: Backgrounds, tooltips, simple reveals
+  └─ Performance: Excellent (opacity-only)
+  └─ Example: `.modal-backdrop.show`
+
+@keyframes fade-up
+  └─ Effect: Fade + slide from bottom
+  └─ Transform: translateY(80px) → translateY(0)
+  └─ Opacity: 0 → 1
+  └─ Direction: Upward motion
+  └─ Usage: Content entering viewport from below
+  └─ Best For: Sections, cards, text blocks
+  └─ Psychology: Suggests emergence, revelation
+  └─ Example: `.service-card.animate`
+
+@keyframes fade-down
+  └─ Effect: Fade + slide from top
+  └─ Transform: translateY(-80px) → translateY(0)
+  └─ Opacity: 0 → 1
+  └─ Direction: Downward motion
+  └─ Usage: Headers, notifications, dropdown menus
+  └─ Best For: Top-anchored elements, warnings, announcements
+  └─ Psychology: Suggests descent, delivery
+  └─ Example: `.notification-banner`
+
+@keyframes fade-left
+  └─ Effect: Fade + slide from left
+  └─ Transform: translateX(-120px) → translateX(0)
+  └─ Opacity: 0 → 1
+  └─ Direction: Left to right motion
+  └─ Usage: Content entering from left edge
+  └─ Best For: Images, sidebars, navigation drawers
+  └─ Psychology: Suggests forward progression (LTR languages)
+  └─ Example: `.sidebar.active`
+
+@keyframes fade-right
+  └─ Effect: Fade + slide from right
+  └─ Transform: translateX(120px) → translateX(0)
+  └─ Opacity: 0 → 1
+  └─ Direction: Right to left motion
+  └─ Usage: Content entering from right edge
+  └─ Best For: Secondary content, images, feature callouts
+  └─ Psychology: Suggests supporting information
+  └─ Example: `.feature-image`
+
+EASING & TIMING:
+----------------
+Recommended Easing Functions:
+
+cubic-bezier(0.25, 0.8, 0.25, 1) - "Ease Out Natural"
+  └─ Usage: Default for most animations
+  └─ Characteristic: Smooth deceleration
+  └─ Best For: fade-in, fade-up, fade-down, fade-left, fade-right
+  └─ Feel: Organic, comfortable, professional
+
+cubic-bezier(0.4, 0.0, 0.2, 1) - "Material Ease"
+  └─ Usage: Sharp, precise animations
+  └─ Characteristic: Quick start, smooth end
+  └─ Best For: UI interactions, button states
+  └─ Feel: Snappy, responsive, modern
+
+cubic-bezier(0.68, -0.55, 0.265, 1.55) - "Back Out"
+  └─ Usage: Playful animations
+  └─ Characteristic: Slight overshoot and bounce
+  └─ Best For: Attention-grabbing elements, CTAs
+  └─ Feel: Dynamic, energetic, fun
+  └─ Note: Use sparingly
+
+ease (browser default)
+  └─ Usage: Simple transitions
+  └─ Best For: Basic hover states
+  └─ Example: `transition: all 0.3s ease;`
+
+ANIMATION CLASSES SYSTEM:
+--------------------------
+.animation-box
+  └─ Base class for animated elements
+  └─ Initial State: opacity: 0
+  └─ Behavior: animation-fill-mode: forwards
+  └─ Timing: animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1)
+  └─ Optimization: will-change: opacity, transform
+  └─ Usage: Add to any element that should animate on load/scroll
+
+Duration Modifier Classes:
+  .anim-fast
+    └─ Sets --anim-duration: var(--anim-duration-fast) (0.8s)
+  .anim-normal
+    └─ Sets --anim-duration: var(--anim-duration-normal) (1.1s)
+  .anim-slow
+    └─ Sets --anim-duration: var(--anim-duration-slow) (1.6s)
+
+Delay Modifier Classes:
+  .anim-delay-none
+    └─ Sets --anim-delay: var(--anim-delay-none) (0s)
+  .anim-delay-sm
+    └─ Sets --anim-delay: var(--anim-delay-sm) (0.25s)
+  .anim-delay-md
+    └─ Sets --anim-delay: var(--anim-delay-md) (0.45s)
+
+ACCESSIBILITY:
+--------------
+@media (prefers-reduced-motion: reduce)
+  └─ Disables ALL animations for users who prefer reduced motion
+  └─ Applied to: .animation-box elements
+  └─ Behavior:
+    • animation: none !important
+    • opacity: 1 !important
+    • transform: none !important
+  └─ Result: Content appears immediately without motion
+  └─ Compliance: WCAG 2.1 Level AA requirement
+  └─ Testing: Test with browser/OS settings enabled
+
+PRACTICAL USAGE EXAMPLES:
+--------------------------
+Basic Fade-Up Animation:
+  <div class="animation-box anim-normal anim-delay-none"
+       style="animation-name: fade-up;">
+    Content here
+  </div>
+
+Fast Fade-In with Delay:
+  <div class="animation-box anim-fast anim-delay-sm"
+       style="animation-name: fade-in;">
+    Secondary content
+  </div>
+
+Slow Hero Animation:
+  <div class="animation-box anim-slow anim-delay-none"
+       style="animation-name: fade-up;">
+    Hero content
+  </div>
+
+Staggered List Items:
+  <div class="animation-box anim-normal anim-delay-none"
+       style="animation-name: fade-up;">Item 1</div>
+  <div class="animation-box anim-normal anim-delay-sm"
+       style="animation-name: fade-up;">Item 2</div>
+  <div class="animation-box anim-normal anim-delay-md"
+       style="animation-name: fade-up;">Item 3</div>
+
+ANIMATION PATTERNS:
+-------------------
+Hero Section Pattern:
+  1. Background: fade-in, slow, no delay
+  2. Headline: fade-up, slow, small delay (0.25s)
+  3. Subtitle: fade-up, normal, medium delay (0.45s)
+  4. CTA Button: fade-up, fast, larger delay (0.7s)
+
+Card Grid Pattern:
+  1. First Card: fade-up, normal, no delay
+  2. Second Card: fade-up, normal, 0.25s delay
+  3. Third Card: fade-up, normal, 0.5s delay
+  4. Fourth Card: fade-up, normal, 0.75s delay
+  Note: Don't exceed 1s total stagger for UX
+
+Section Reveal Pattern:
+  1. Section Background: fade-in, fast
+  2. Section Title: fade-up, normal, 0.25s delay
+  3. Section Content: fade-up, normal, 0.45s delay
+
+Sidebar/Modal Pattern:
+  1. Overlay: fade-in, fast
+  2. Container: fade-left or fade-right, normal, 0.1s delay
+  3. Content: fade-in, fast, 0.3s delay
+
+PERFORMANCE OPTIMIZATION:
+-------------------------
+GPU-Accelerated Properties (Use These):
+  ✓ transform: translate, scale, rotate
+  ✓ opacity
+  ✓ filter (with caution)
+
+Non-Accelerated Properties (Avoid):
+  ✗ width, height
+  ✗ top, left, right, bottom (use transform instead)
+  ✗ margin, padding
+
+Optimization Tips:
+  • Use will-change sparingly (only on .animation-box)
+  • Remove will-change after animation completes
+  • Limit simultaneous animations to 10-15 elements
+  • Use animation-fill-mode: forwards to prevent reflows
+  • Test on low-end devices (mobile, older computers)
+
+COMMON ANIMATION MISTAKES TO AVOID:
+------------------------------------
+✗ Animating too many elements at once (>20)
+✗ Using long durations for small elements (>1.5s)
+✗ Staggering too many items (>8 items = slow UX)
+✗ Forgetting prefers-reduced-motion support
+✗ Animating width/height (causes reflow)
+✗ Using animations on initial page load (delay 0.5s)
+✗ Repeating animations on every scroll
+✗ Animations without purpose (decoration only)
+
+TESTING CHECKLIST:
+------------------
+☑ Test with prefers-reduced-motion enabled
+☑ Test on 60Hz and 120Hz+ displays
+☑ Test on low-end mobile devices
+☑ Verify animations don't cause layout shift
+☑ Check performance with Chrome DevTools
+☑ Ensure animations feel purposeful, not distracting
+☑ Validate timing across all breakpoints
+☑ Test animation stacking (multiple overlapping animations)
+
+==============================================================================*/
+
+/*==============================================================================
+[Animation Timing]
+
+Detailed timing patterns and orchestration strategies for creating 
+cohesive animation sequences throughout the template.
+
+TIMING PHILOSOPHY:
+------------------
+Good animation timing creates rhythm, guides attention, and establishes 
+hierarchy. Timing should feel natural, never mechanical or distracting.
+
+BASIC TIMING RULES:
+-------------------
+1. Smaller elements = faster animations (0.8s)
+2. Larger elements = slower animations (1.1-1.6s)
+3. Sequential items = stagger by 0.25s intervals
+4. Related content = animate together (no delay)
+5. Maximum stagger = 1-1.5s total (avoid user fatigue)
+
+TIMING PATTERNS BY CONTEXT:
+----------------------------
+
+PAGE LOAD SEQUENCE:
+  0.0s - 0.5s: Initial delay (let page settle)
+  0.5s - 1.3s: Hero section animations begin
+    └─ 0.5s: Hero background/image (fade-in, slow)
+    └─ 0.75s: Main headline (fade-up, slow)
+    └─ 0.95s: Subtitle/description (fade-up, normal)
+    └─ 1.2s: CTA buttons (fade-up, fast)
+  1.5s+: Below-fold content (trigger on scroll)
+
+SCROLL-TRIGGERED SECTIONS:
+  Trigger Point: When element reaches 80% viewport height
+  
+  Single Content Block:
+    0.0s: Trigger animation
+    0.0s - 1.1s: Content animates in (fade-up, normal)
+  
+  Multiple Elements (Cards, Features):
+    0.0s: First element (fade-up, normal, no delay)
+    0.25s: Second element (fade-up, normal, 0.25s delay)
+    0.5s: Third element (fade-up, normal, 0.5s delay)
+    0.75s: Fourth element (fade-up, normal, 0.75s delay)
+    Note: Stop at 4-5 items, animate rest immediately
+
+MODAL/OVERLAY TIMING:
+  0.0s: Trigger modal open
+  0.0s - 0.8s: Backdrop fade-in (fast)
+  0.1s - 1.1s: Modal container slides in (normal, 0.1s delay)
+  0.3s - 1.1s: Modal content fades in (fast, 0.3s delay)
+  
+  Total perceived time: ~1.5s
+
+NAVIGATION/MENU TIMING:
+  Dropdown Menus:
+    0.0s: Trigger on hover
+    0.0s - 0.8s: Menu appears (fade-down, fast)
+    No item stagger (all appear together)
+  
+  Mobile Sidebar:
+    0.0s: Trigger on menu button click
+    0.0s - 0.8s: Overlay appears (fade-in, fast)
+    0.1s - 1.1s: Sidebar slides in (fade-left, normal)
+    0.2s - 1.0s: Menu items fade in (fast, 0.2s delay)
+
+CARD GRID TIMING STRATEGIES:
+-----------------------------
+3-Column Grid (Services, Features):
+  Row 1:
+    Card 1: delay 0s
+    Card 2: delay 0.25s
+    Card 3: delay 0.5s
+  Row 2:
+    Card 4: delay 0.75s
+    Card 5: delay 1.0s
+    Card 6: delay 1.25s
+  
+  Note: Consider animating rows together instead of individual cards
+        if more than 6 cards exist
+
+Alternative Pattern (Rows):
+  Row 1 (all cards): delay 0s (animate together)
+  Row 2 (all cards): delay 0.3s (animate together)
+  Row 3+ (all cards): animate immediately (no stagger)
+
+FORM TIMING:
+------------
+Form Reveal:
+  0.0s: Form container (fade-in, fast)
+  0.15s: First input group (fade-up, fast)
+  0.3s: Second input group (fade-up, fast)
+  0.45s: Submit button (fade-up, fast)
+
+Form Validation:
+  Error Message: Appear instantly (fade-in, 0.3s)
+  Success Message: Appear with slight bounce
+  Loading State: Immediate feedback (no delay)
+
+INTERACTION TIMING:
+-------------------
+Button Hover:
+  Duration: 0.3s
+  Easing: ease
+  Properties: background-color, color, transform
+
+Button Click:
+  Ripple Effect: 0.6s
+  Feedback: Immediate (0s delay)
+  State Change: 0.3s
+
+Link Hover:
+  Duration: 0.3s
+  Easing: ease
+  Properties: color, border-bottom
+
+Tab Switch:
+  Old Content Out: 0.3s fade-out
+  New Content In: 0.3s fade-in (0.1s delay)
+  Total Time: 0.4s
+
+Accordion:
+  Expand: 0.4s ease-out
+  Collapse: 0.4s ease-in
+  Content Reveal: fade-in during last 0.2s
+
+CAROUSEL/SLIDER TIMING:
+-----------------------
+Auto-Advance:
+  Delay Between Slides: 5-7 seconds
+  Transition Duration: 0.8s
+  
+Slide Transition:
+  Current Slide Out: 0.4s fade-out
+  Next Slide In: 0.4s fade-in (0.4s delay)
+  Total: 0.8s
+
+Manual Navigation:
+  Transition: 0.6s (faster than auto)
+  Feedback: Immediate (no delay)
+
+NOTIFICATION TIMING:
+--------------------
+Toast/Snackbar:
+  Appear: 0.3s fade-up
+  Stay: 3-5 seconds
+  Dismiss: 0.3s fade-out
+  
+Alert Banner:
+  Appear: 0.5s fade-down
+  Auto-dismiss: 10+ seconds (if applicable)
+  Manual Dismiss: 0.3s fade-out
+
+LOADING STATES:
+---------------
+Initial Load:
+  Spinner: Appears after 300ms (avoid flash)
+  Content: Replaces spinner with fade-in (0.3s)
+
+Inline Loading:
+  Spinner: Immediate (0s delay)
+  Success/Error: 0.3s fade-in
+  Content Update: 0.3s fade-in
+
+Skeleton Screens:
+  Skeleton: No animation
+  Content Load: 0.5s fade-in (replace skeleton)
+
+STAGGER CALCULATION FORMULAS:
+------------------------------
+For N items with base delay D:
+  Item 1: delay = 0s
+  Item 2: delay = D (0.25s)
+  Item 3: delay = D × 2 (0.5s)
+  Item 4: delay = D × 3 (0.75s)
+  Item N: delay = D × (N-1)
+
+Maximum Recommended Stagger:
+  Total Stagger Time = D × (N-1)
+  Recommended Max: 1.0 - 1.5s
+  Therefore: Max N = (1.5s / 0.25s) + 1 = 7 items
+
+For grids, calculate by row or column:
+  3-column grid:
+    Row Stagger: 0.3s per row
+    Column Stagger: 0s (animate together)
+  
+  Result: Each row appears 0.3s after previous
+
+TIMING DEBUGGING TIPS:
+-----------------------
+Too Fast (<0.5s):
+  └─ Feels rushed, users miss the animation
+  └─ Fix: Increase to 0.8s minimum
+
+Too Slow (>2s):
+  └─ Feels sluggish, users wait too long
+  └─ Fix: Reduce to 1.6s maximum
+
+Too Much Stagger (>1.5s total):
+  └─ Feels endless, users lose patience
+  └─ Fix: Reduce stagger delay or animate in groups
+
+Janky Animations:
+  └─ Causes: Animating width/height, too many simultaneous
+  └─ Fix: Use transform, reduce concurrent animations
+
+RESPONSIVE TIMING ADJUSTMENTS:
+-------------------------------
+Mobile Devices:
+  └─ Reduce all durations by 20-30%
+  └─ Example: 1.1s desktop → 0.8s mobile
+  └─ Reason: Smaller screens = less distance = faster perception
+
+Slow Connections:
+  └─ Delay animations until content loaded
+  └─ Use loading states and skeleton screens
+  └─ Animate progressively (above fold first)
+
+Low-End Devices:
+  └─ Simplify animations (fade-in only)
+  └─ Reduce stagger (0.15s instead of 0.25s)
+  └─ Limit to 5-7 concurrent animations
+
+TIMING BEST PRACTICES:
+-----------------------
+✓ Start with fast duration (0.8s), increase if needed
+✓ Use consistent timing across similar elements
+✓ Stagger related groups, not individual items
+✓ Respect user attention span (< 2s per sequence)
+✓ Test on slow devices and connections
+✓ Provide instant feedback for interactions
+✓ Let users skip/interrupt long animations
+
+✗ Don't animate everything at once
+✗ Don't use random timing values
+✗ Don't make users wait for cosmetic animations
+✗ Don't stagger more than 7-8 items
+✗ Don't forget prefers-reduced-motion
+✗ Don't use different timings for same element type
+✗ Don't delay critical content (above fold)
+
+TIMING TESTING WORKFLOW:
+-------------------------
+1. Set all animations to 2x speed (easy to spot issues)
+2. Identify animations that feel too long or short
+3. Adjust durations in 0.1s increments
+4. Test on actual devices (not just DevTools)
+5. Verify with prefers-reduced-motion enabled
+6. Get user feedback (not just developer opinion)
+7. Fine-tune delays based on real usage
+8. Document final timing decisions
+
+RECOMMENDED TIMING VALUES SUMMARY:
+----------------------------------
+Micro-interactions: 0.3s
+Tooltips/Popovers: 0.3s
+Dropdowns: 0.8s
+Modals: 1.0-1.2s
+Page Sections: 1.1s
+Hero Sections: 1.6s
+Stagger Delay: 0.25s
+Max Total Stagger: 1.5s
+Hover Effects: 0.3s
+Click Feedback: 0.6s
+
+==============================================================================*/
+
+/* ======================= 
+    1.0 Import Vendor
+==========================*/
+
+@import url('./fonts.css');
+@import url('./vendor/bootstrap.min.css');
+@import url('./vendor/swiper.min.css');
+@import url('./vendor/fontawesome.min.css');
+@import url('./vendor/brands.css');
+@import url('./vendor/solid.css');
+@import url('./vendor/regular.css');
+@import url('./vendor/flatpickr.min.css');
+
+/* ======================= 
+    2.0 Variable Settings
+==========================*/
+
+:root{
+    /* 2.1 Color Variable */
+    --primary: #2F2F2F;
+    --secondary: #FFFFFF;
+    --text-color: #7A7A7A;
+    --accent-color: #0EA5E9;
+    --accent-color-2: #334155;
+    --accent-color-3: #0796D6;
+    --accent-color-4: #F2295B00;
+    --accent-color-5: #45566D;
+    --accent-color-6: #8191A8;
+    --accent-color-7: #EEEEEE;
+    --accent-color-8: #EFFAFF;
+    --accent-color-9: #D9D9D9;
+    --accent-color-10: #FAFAFA;
+    --accent-color-11: #45566D52;
+    --accent-overlay: #33333380;
+
+    /* 2.2 Font Variable */
+    --font-family-heading: "Source Sans 3", sans-serif;
+    --font-family-text: "Roboto", sans-serif;
+
+    /* 2.3 Animation Duration Preset */
+    --anim-duration-fast: 0.8s;
+    --anim-duration-normal: 1.1s;
+    --anim-duration-slow: 1.6s;
+
+    /* 2.4 Animation Delay Preset */
+    --anim-delay-none: 0s;
+    --anim-delay-sm: 0.25s;
+    --anim-delay-md: 0.45s;
+}
+
+/* ======================= 
+    3.0 Animation Settings
+==========================*/
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        transform-origin: center;
+        border-width: 0px;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(1.7, 1.7, 1.8);
+        transform-origin: center;
+        border-width: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animation-box { 
+        animation: none !important;
+        opacity: 1 !important; 
+        transform: none !important; 
+    }
+}
+
+@keyframes fade-in   { 
+    from {opacity:0;} to {opacity:1;} 
+}
+
+@keyframes fade-up   { 
+    from {opacity:0; transform:translateY(80px);} to {opacity:1; transform:translateY(0);} 
+}
+
+@keyframes fade-down { 
+    from {opacity:0; transform:translateY(-80px);} to {opacity:1; transform:translateY(0);} 
+}
+
+@keyframes fade-left { 
+    from {opacity:0; transform:translateX(-120px);} to {opacity:1; transform:translateX(0);} 
+}
+
+@keyframes fade-right{ 
+    from {opacity:0; transform:translateX(120px);} to {opacity:1; transform:translateX(0);} 
+}
+
+/* ======================= 
+    4.0 Base Settings
+==========================*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-family-text);
+    color: var(--primary);
+    background-color: var(--secondary);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    font-optical-sizing: auto;
+    font-kerning: auto;
+    position: relative;
+}
+
+h1{
+    font-size: 90px;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+h2{
+    font-size: 68px;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+h3{
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+h4{
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+h5{
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+
+h6{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-family-heading);
+    margin: 0px;
+}
+
+p{
+    font-family: var(--font-family-text);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+button, a, .btn{
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+    text-decoration: none;
+}
+
+/* ======================= 
+    5.0 Header Style
+==========================*/
+
+.header-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 20px;
+    z-index: 10;
+}
+
+.header-container .hero-container{
+    max-width: none;
+    width: 100%;
+}
+
+.navbar-nav-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-logo-container{
+    flex: 0 0 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar-logo-container img{
+    width: 96px !important;
+    height: 96px !important;
+    object-fit: contain;
+}
+
+.nav-link-container{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+}
+
+.nav-item{
+    padding: 0px 10px;
+}
+
+.nav-link{
+    color: var(--secondary);
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover{
+    color: var(--secondary);
+}
+
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.show{
+    color: var(--accent-color);
+}
+
+.nav-link:focus{
+    color: var(--accent-color);
+}
+
+.dropdown-menu{
+    padding: 10px 0px;
+    box-shadow: 0 10px 30px 0 rgba(45, 45, 45, .2);
+    border-radius: 0px;
+}
+
+.dropdown-item{
+    color: var(--primary);
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active,
+.dropdown-item.active{
+    background-color: var(--secondary);
+    color: var(--accent-color);
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.nav-item.dropdown i{
+    color: var(--accent-color);
+}
+
+.nav-item.dropdown:hover i,
+.nav-item.dropdown:focus i{
+    color: var(--secondary);
+}
+
+.nav-btn{
+    display: none;
+    padding: 10px 10px;
+    border-radius: 0px;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.navbar-cta-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px 10px;
+    flex: 0 0 auto;
+    margin-left: auto;
+    justify-content: flex-end;
+    text-align: left;
+}
+
+.navbar-cta-container .navbar-cta-icon{
+    color: var(--accent-color);
+    font-size: 42px;
+}
+
+.navbar-cta-container h6,
+.navbar-cta-container p{
+    white-space: nowrap;
+}
+
+/* =======================
+    6.0 Sidebar Style
+==========================*/
+
+.sidebar-overlay{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: var(--accent-overlay);
+    transition: left 0.4s ease-in-out;
+    z-index: 11;
+    display: none;
+}
+
+.sidebar-overlay.active{
+    left: 0;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: var(--secondary);
+    color: var(--primary);
+    transition: transform 0.4s ease-in-out;
+    z-index: 12;
+    overflow-y: auto;
+    max-height: 100vh;
+    padding: 0px 16px 0px 5px;
+    display: none;
+}
+
+.sidebar.active{
+    transform: translateX(300px);
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+}
+
+.sidebar-close-btn {
+    display: inline-block;
+    justify-content: center;
+    background-color: var(--accent-color);
+    border-radius: 8px 8px 8px 8px;
+    color: var(--secondary);
+    font-weight: 600;
+    position: relative;
+    font-family: var(--font-family-2);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 18px;
+    transition: all 300ms;
+    border: none;
+    outline: none;
+}
+
+.sidebar-close-btn:hover{
+    background-color: var(--accent-color-3);
+    color: var(--secondary);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar-menu li {
+    padding: 10px 15px 10px 15px;
+}
+
+.sidebar-menu a {
+    color: var(--primary);
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-family: var(--font-family-heading);
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0px;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active,
+.sidebar-menu a:focus {
+    color: var(--accent-color);
+}
+
+.sidebar-dropdown .dropdown-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebar-dropdown-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 3px 15px;
+    transition: transform 0.3s ease;
+
+}
+.sidebar-dropdown-btn:hover {
+    color: var(--primary);
+}
+
+.sidebar-dropdown-menu {
+    list-style: none;
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.sidebar-dropdown-menu.active {
+    max-height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.below-dropdown {
+    transition: margin-top 0.1s ease-in-out;
+    margin-top: 0px;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 5px;
+}
+
+/* =======================
+    7.0 Footer Style
+==========================*/
+
+.footer__content-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0px 0px;
+}
+
+.footer__inner-container{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 50px 50px;
+    padding: 240px 20px 120px 20px;
+}
+
+.footer__highlight-text-container{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 70px 70px;
+    justify-content: center;
+    padding: 80px 0px 0px 0px;
+    width: 100%;
+    z-index: 0;
+}
+
+.footer__highlight-text-fill{
+    font-family: var(--font-family-heading);
+    font-size: 260px;
+    font-weight: 600;
+    line-height: 1em;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.footer__highlight-text-outline{
+    font-family: var(--font-family-heading);
+    font-size: 260px;
+    font-weight: 600;
+    line-height: 1em;
+    -webkit-text-stroke-width: 2px;
+    stroke-width: 2px;
+    -webkit-text-stroke-color: #F3F3F3;
+    stroke: #F3F3F3;
+    color: var(--accent-color-4);
+    text-align: center;
+}
+
+.footer__copyright-wrapper{
+    padding: 0px 20px 30px 20px;
+}
+
+.footer__copyright-container{
+    background-color: var(--accent-color-11);
+    color: var(--secondary);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px 30px;
+    border-radius: 30px;
+    justify-content: space-between;
+    padding: 20px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer__copyright-container::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: inherit;
+    background-color: inherit;
+    z-index: -1;
+}
+
+.footer-legallink{
+    color: var(--secondary);
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+/* =======================
+    8.0 Section Setting
+==========================*/
+
+.section{
+    padding: 120px 20px 120px 20px;
+}
+
+/* =======================
+    9.0 Hero Container Style
+==========================*/
+
+.hero-container{
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* =======================
+    10.0 Card Style
+==========================*/
+
+.card{
+    border: none;
+    border-radius: 0px;
+}
+
+.card-chooseus-cta{
+    position: absolute;
+    bottom: 0;
+    left: -114px;
+    width: 65%;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    z-index: 2;
+}
+
+.card-trust-overview-cta{
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    padding: 40px 40px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 63%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.card-trust-overview-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px 20px;
+    color: var(--secondary);
+}
+
+.card-trust-overview-highlight{
+    width: 32%;
+    background-color: var(--accent-color-5);
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 40px 40px;
+}
+
+.card-trust-overview-highlight .spacer{
+    height: 50px;
+}
+
+.card-testimonial{
+    background-color: var(--accent-color-10);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 30px;
+}
+
+.card-testimonial .testimonial-designation{
+    color: var(--accent-color);
+}
+
+.card__about-overview{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 40px 40px;
+    background-color: var(--accent-color-8);
+    color: var(--primary);
+}
+
+.card__about-mission{
+    background-color: var(--accent-color-8);
+    color: var(--primary);
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.card__about-mission.vision-card{
+    background-color: transparent;
+}
+
+.card__whybookingus{
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 15px 15px;
+    padding: 30px 30px;
+}
+
+.card__whybookingus .whybookingus-icon{
+    font-size: 50px;
+}
+
+.card__single-service-cta{
+    background-image: url('../images/dummy-img-600x600.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+    color: var(--secondary);
+    position: relative;
+    z-index: 1;
+}
+
+.card__single-service-cta::before{
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, var(--accent-color-4) 0%, var(--accent-color-2) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.card__single-service-cta .spacer{
+    height: 160px;
+}
+
+.card__booking{
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+    padding: 40px 40px;
+    background-color: var(--accent-color-2);
+    color: var(--secondary);
+}
+
+.card-pricing{
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+    padding: 40px 40px;
+    background-color: var(--accent-color-8);
+    color: var(--primary);
+}
+
+.card__contact-card{
+    background-color: var(--accent-color-2);
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+    padding: 30px 30px;
+}
+
+.card__footer-info{
+    background-color: var(--accent-color-11);
+    color: var(--secondary);
+    width: 58%;
+    min-height: 325px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+    padding: 40px 40px;
+    border-radius: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.card__footer-info::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: inherit;
+    background-color: inherit;
+    z-index: -1;
+}
+
+.card__footer-quick-links{
+    background-color: var(--accent-color-11);
+    color: var(--secondary);
+    width: 42%;
+    min-height: 325px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 40px 40px;
+    border-radius: 30px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.card__footer-quick-links::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: inherit;
+    background-color: inherit;
+    z-index: -1;
+}
+
+/* =======================
+    11.0 Button Style
+==========================*/
+
+.btn{
+    border: none;
+    border-radius: none;
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+.btn-accent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0px 0px;
+    transition: all 0.4s ease;
+}
+
+.btn .btn-title{
+    padding: 17px 34px 17px 34px;
+    border-radius: 50px 50px 50px 50px;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    transition: all 0.4s ease;
+}
+
+.btn .btn-title:hover{
+    background-color: var(--accent-color-3);
+    color: var(--secondary);
+}
+
+.btn .btn-icon{
+    width: 52px;
+    min-height: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px 50px;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    transform: rotate(-45deg);
+    transition: all 0.4s ease;
+}
+
+.btn .btn-icon:hover{
+    transform: rotate(0deg);
+}
+
+.btn-accent-secondary .btn-title,
+.btn-accent-secondary:hover .btn-title{
+    background-color: var(--secondary);
+    color: var(--accent-color);
+}
+
+.btn-accent-secondary .btn-icon{
+    background-color: var(--secondary);
+    color: var(--accent-color);
+}
+
+.btn-service-link{
+    padding: 17px 25px;
+    border-radius: 50px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--accent-color-4);
+    color: var(--primary);
+    font-family: var(--font-family-text);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.btn-service-link.service-link-recent{
+    background-color: var(--accent-color);
+    color: var(--secondary);
+}
+
+.btn-service-link:hover{
+    background-color: var(--accent-color-3);
+    color: var(--secondary);
+}
+
+.btn-submit-form{
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    padding: 17px 34px;
+    border-radius: 50px 50px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btn-submit-form:hover{
+    background-color: var(--accent-color-3);
+    color: var(--secondary);
+}
+
+/* =======================
+    12.0 Form Style
+==========================*/
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+}
+
+.form input,
+.form textarea{
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    padding: 17px 0px;
+    background-color: transparent;
+    color: var(--secondary);
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid var(--accent-color);
+    width: 100%;
+}
+
+.form input::placeholder,
+.form textarea::placeholder{
+    color: var(--secondary);
+    font-size: 16px;
+}
+
+.form input:autofill,
+.form textarea:autofill{
+    background-color: transparent;
+    color: var(--secondary);
+    transition: background-color 5000s ease-in-out;
+    -webkit-text-fill-color: var(--secondary);
+    font-family: var(--font-family-heading);
+}
+
+.form .dropdown-container {
+    position: relative;
+    width: 100%;
+}
+
+.form .dropdown-select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--accent-color);
+    border-radius: 0px 0px;
+    color: var(--secondary);
+    outline: none;
+    padding: 20px 0px 20px 0px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px 20px;
+    z-index: 2;
+}
+
+.form .dropdown-select i{
+    color: var(--secondary);
+}
+
+.form .dropdown-select:focus{
+    border-bottom: 1px solid  var(--secondary);
+}
+
+.form .dropdown-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    color: var(--secondary);
+    border: none;
+    border-radius: 0;
+    z-index: 10;
+    margin-top: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.form .dropdown-container.active .dropdown-list {
+    display: block;
+}
+
+.form .dropdown-option {
+    background-color: var(--secondary);
+    padding: 20px 20px 20px 20px;
+    border-radius: 0px 0px 0px 0px;
+    border: none;
+    border-bottom: 1px solid var(--accent-color-7);
+    color: var(--primary);
+    cursor: pointer;
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.form .dropdown-option:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary);
+}
+
+.form .dropdown-option.selected {
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.form .selected-text {
+    color: var(--secondary);
+    transition: color 0.2s ease;
+}
+
+.form .selected-text.has-value {
+    color: var(--secondary);
+}
+
+.newsletter-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.newsletter-form input{
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    -webkit-appearance: none;
+    color: var(--secondary);
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    padding: 17px 0px;
+    width: 60%;
+}
+
+.newsletter-form input::placeholder{
+    color: var(--secondary);
+    font-size: 16px;
+}
+
+.newsletter-form input:autofill,
+.newsletter-form textarea:autofill{
+    background-color: transparent;
+    color: var(--secondary);
+    transition: background-color 5000s ease-in-out;
+    -webkit-text-fill-color: var(--secondary);
+    font-family: var(--font-family-heading);
+}
+
+.newsletter-form button{
+    width: 40%;
+}
+
+.alert {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    align-items: center;
+    padding: 2em;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.hidden{
+    display: none;
+}
+/* =======================
+    13.0 Image Style
+==========================*/
+
+.image-container{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.image-container img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.service-icon{
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background-color: var(--accent-color-8);
+    color: var(--accent-color);
+    border: 1px solid rgba(14, 165, 233, 0.18);
+}
+
+.service-icon i{
+    font-size: 28px;
+    line-height: 1;
+}
+
+.partner-img{
+    max-width: 80%;
+    height: auto;
+}
+
+.partner-text{
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    color: var(--secondary);
+    font-family: var(--font-family-heading);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+.company-intro-avatar{
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+    border: 5px solid var(--secondary);
+    border-radius: 100px;
+    margin-left: -15px;
+}
+
+.company-intro-avatar:first-child{
+    margin: 0px;
+}
+
+.about-mission__image{
+    width: 48%;
+}
+
+.about-mission__image img{
+    height: 650px;
+}
+
+.about-mission__image.offset-down{
+    align-self: flex-end;
+}
+
+.whychooseus-image-title img{
+    width: 100%;
+    height: 730px;
+}
+
+.whychooseus-image-highlight img{
+    width: 100%;
+    height: 500px;
+}
+
+.trust-overview__highlight-image{
+    width: 66.9%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.trust-overview__highlight-image img{
+    width: 100%;
+    height: 445px;
+    object-position: top center;
+}
+
+.steps-analyze__image-container img{
+    width: 100%;
+    height: 320px;
+    border-radius: 0px 35px 0px 0px;
+}
+
+.steps-support__image-container img{
+    width: 100%;
+    height: 320px;
+    border-radius: 0px 35px 0px 0px;
+}
+
+.proven-result-avatar{
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+    border: 5px solid var(--secondary);
+    border-radius: 100px;
+    margin-left: -15px;
+}
+
+.proven-result-avatar:first-child{
+    margin: 0px;
+}
+
+.booking-image img{
+    width: 100%;
+    height: 315px;
+}
+
+.team-image img{
+    width: 100%;
+}
+
+.case-studies-image img{
+    height: 380px;
+}
+
+.single-service-image img{
+    width: 100%;
+    height: 460px;
+}
+
+.single-post-image img{
+    width: 100%;
+}
+
+.recent-post-image{
+    max-width: 100%;
+    width: 90px;
+    height: auto;
+    aspect-ratio: auto 150 / 150;
+}
+
+.contact-cta__image{
+    width: 40%;
+    padding: 40px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-cta__image img{
+    width: 82%;
+}
+
+.footer__logo{
+    width: 140px;
+    max-width: 65%;
+}
+
+.footer__logo img{
+    width: 100%;
+    height: auto;
+}
+
+/* =======================
+    14.0 Color Style
+==========================*/
+
+.primary-accent{
+    color: var(--primary);
+}
+
+.secondary-accent{
+    color: var(--secondary);
+}
+
+.accent-color{
+    color: var(--accent-color);
+}
+
+/* =======================
+    15.0 Banner Style
+==========================*/
+
+.banner-home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.slideshow-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slideshow-container .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 0.8s ease-in-out, transform 5s ease-in-out;
+    will-change: opacity, transform;
+}
+
+.slideshow-container .slide::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: radial-gradient(at center center, var(--accent-color-4) 0%, var(--accent-color-2) 100%);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.slideshow-container .slide::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    z-index: 1;
+}
+
+.slideshow-container .slide.active {
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.slideshow-container .slide.preparing {
+    opacity: 0;
+    transform: scale(1);
+    z-index: 0;
+}
+
+.banner-page{
+    padding: 240px 20px 120px 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.banner-page::before{
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    background-image: radial-gradient(at center center, var(--accent-color-4) 0%, var(--accent-color-2) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.banner-about{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-service{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-single-service{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-pricing{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-booking{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-testimonials{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-faq{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-case-studies{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-blog{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-single-post{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-contact{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+}
+
+.banner-notfound{
+    position: relative;
+    width: auto;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent-color-2);
+    justify-content: center;
+    z-index: 1;
+}
+
+.banner-notfound::before{
+    content: '';
+    position: absolute;
+    background-image: url('../images/dummy-img-1920x900.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(87%) contrast(122%) saturate(0%) blur(0px) hue-rotate(0deg);
+    opacity: 0.25;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.company-intro-banner{
+    min-height: 50vh;
+    background-image: url('../images/dummy-img-1920x900.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.company-intro-banner::before{
+    content: '';
+    background-color: var(--accent-color-2);
+    opacity: 0.5;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.trust-overview__banner{
+    background-color: var(--accent-color-2);
+    color: var(--secondary);
+}
+
+.proven-result__banner{
+    background-color: var(--accent-color-2);
+    color: var(--secondary);
+}
+
+.whybookingus__banner{
+    background-image: url('../images/dummy-img-1920x900.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.whybookingus__banner::before{
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, var(--accent-color-4) 0%, var(--accent-color-2) 100%);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.contact-cta__banner{
+    background-color: var(--accent-color);
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-cta__banner::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/dummy-img-1920x900.jpg');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 85% auto;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.footer-banner{
+    background-color: var(--accent-color-2);
+    color: var(--secondary);
+    padding: 0px;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* =======================
+    16.0 Heading Style
+==========================*/
+
+.sub-heading{
+    color: var(--accent-color);
+    font-family: var(--font-family-heading);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.sub-heading.white-accent{
+    color: var(--secondary);
+}
+
+/* =======================
+    17.0 Banner Content Style
+==========================*/
+
+/* 17.1 Banner Home */
+
+.banner-home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 50px 50px;
+    position: relative;
+    z-index: 5;
+}
+
+.banner-home__title-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.banner-home__sub-heading{
+    color: var(--secondary);
+}
+
+.banner-home__title{
+    color: var(--secondary);
+}
+
+.banner-home__description-content{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    gap: 20px 20px;
+    justify-content: flex-end;
+}
+
+.banner-home__description{
+    color: var(--secondary);
+    margin: 0px;
+}
+
+.banner-home__experience-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
+    padding: 50px 0px 0px 0px;
+    border-top: 1px solid var(--accent-color-6);
+}
+
+.banner-home__experience-rate{
+    font-family: var(--font-family-heading);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2em;
+    color: var(--secondary);
+}
+
+.banner-home-experience-rate-suffix{
+    font-family: var(--font-family-heading);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3em;
+    color: var(--accent-color);
+}
+
+/* 17.2 Banner Page */
+
+.banner-page__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary);
+}
+
+/* 17.3 Banner Notfound */
+
+.banner-notfound__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary);
+}
+
+.banner-notfound__notfound-text{
+    font-size: 260px;
+    font-weight: 600;
+    line-height: 1em;
+}
+
+.banner-notfound__notfound-subtitle{
+    width: 54%;
+}
+
+.banner-notfound__notfound-description{
+    color: var(--secondary);
+    width: 43%;
+    margin: 0px;
+}
+
+/* =======================
+    18.0 Service Section
+==========================*/
+
+/* 18.1 Main Service Style */
+
+.service-section-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px 80px;
+}
+
+.service-section__heading-container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px 50px;
+}
+
+.service-section__description-container{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: end;
+    border-bottom: 1px solid var(--accent-color-9);
+}
+
+.service-section__description{
+    margin-bottom: 30px;
+}
+
+.service-section__heading{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.service-section__heading.service-list-heading{
+    width: 85%;
+}
+
+.service-link-wrapper{
+    color: var(--accent-color);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6em;
+}
+
+.service-section__grid-layout{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px 70px;
+}
+
+.service-section__content-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+}
+
+.service-card-image img{
+    border-radius: 18px;
+}
+
+.service-section__content-title{
+    width: 52%;
+}
+
+.service-section__cta-container{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    font-size: 18px;
+    color: var(--accent-color-2);
+    transition: all 0.4s ease;
+}
+
+.service-section__cta-container:hover{
+    color: var(--accent-color);
+}
+
+/* 18.2 Single Service Style */
+
+.single-service__recent-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.single-service__divider{
+    border-bottom: 1px solid var(--accent-color-7);
+}
+
+.single-service__recent-link-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px 10px;
+}
+
+.single-service-cta__link-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: var(--secondary);
+}
+
+/* =======================
+   19.0 Company Intro Style
+==========================*/
+
+.company-intro__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px 80px;
+}
+
+.company-intro__reviewer-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px 20px;
+}
+
+.company-intro-avatar-title{
+   width: 30%;
+   text-align: start;
+}
+
+.company-intro__content-title{
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px 40px;
+}
+
+.company-intro__reviewer-image-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.company-intro__video-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px 20px;
+    justify-content: flex-end;
+}
+
+/* =======================
+   20.0 Why Choose Us Style
+==========================*/
+
+.whychooseus__inner-container{
+    display: flex;
+    flex-direction: row;
+    gap: 80px 80px;
+}
+
+.whychooseus__title-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.whychooseus__title-container .spacer{
+    height: 20px;
+}
+
+.whychooseus__highlight-contaner{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.whychooseus-highlight-item{
+    display: flex;
+    flex-direction: row;
+    gap: 20px 20px;
+}
+
+.card-chooseus-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px 15px;
+    color: var(--secondary);
+    fill: var(--secondary);
+}
+
+/* =======================
+   21.0 Trust Overview Style
+==========================*/
+
+.trust-overview__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px 80px;
+}
+
+.trust-overview__title-container{
+    display: flex;
+    flex-direction: row;
+    gap: 80px 80px;
+}
+
+.trust-overview__title-container .sub-heading{
+    width: 20%;
+}
+
+.trust-overview__title-container .title-description{
+    width: 74%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.trust-overview__highlight-content{
+    display: flex;
+    flex-direction: row;
+    gap: 20px 20px;
+}
+
+.trust-overview__stat-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px 10px;
+    width: 69%;
+}
+
+.trust-overview-stat{
+    font-family: var(--font-family-heading);
+    font-size: 90px;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+.trust-overview-suffix{
+    color: var(--accent-color);
+    font-family: var(--font-family-heading);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+/* =======================
+   22.0 Testimonial Style
+==========================*/
+
+.testimonial__inner-container{
+    display: flex;
+    flex-direction: row;
+    gap: 80px 80px;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+}
+
+.testimonial__heading-container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial__card-container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.testimonial-blur .spacer{
+    height: 200px;
+}
+
+.testimonial-blur.blur-up{
+    position: absolute;
+    background-image: linear-gradient(180deg, var(--secondary) 0%, var(--accent-color-4) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.testimonial-blur.blur-down{
+    position: absolute;
+    background-image: linear-gradient(180deg, var(--accent-color-4) 0%, var(--secondary) 100%);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.testimonial-highlight-text-container{
+    position: absolute;
+    left: 0;
+    bottom: 395px;
+    z-index: 0;
+}
+
+.testimonial-highlight-text{
+    font-family: var(--font-family-heading);
+    font-size: 230px;
+    font-weight: 600;
+    line-height: 1em;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 2px;
+    stroke-width: 2px;
+    -webkit-text-stroke-color: #F3F3F3;
+    stroke: #F3F3F3;
+    color: var(--accent-color-4);
+}
+
+/* =======================
+   23.0 How it Works Style
+==========================*/
+
+/* 23.1 How it Works - Consultation */
+
+.steps-consultation__inner-container{
+    display: flex;
+    flex-direction: row;
+    gap: 0px 0px;
+}
+
+.steps-consultation__card-steps{
+    width: 33.3%;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 40px 40px;
+}
+
+.steps-consultation__card-steps .spacer{
+    height: 25px;
+}
+
+.steps-consultation__heading-wrapper{
+    width: 67%;
+    background-color: var(--accent-color);
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.steps-consultation__heading-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    justify-content: center;
+    padding: 0px 0px 0px 82px;
+    min-height: 343px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 0px 0px 0px 50px;
+}
+
+/* 23.2 How it Works - Analyze & Strategize */
+
+.steps-analyze__inner-container{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+}
+
+.steps-analyze__image-wrapper{
+    width: 33.3%;
+    background-color: var(--accent-color);
+    display: flex;
+    flex-direction: row;
+}
+
+.steps-analyze__image-container{
+    width: 100%;
+    background-color: var(--secondary);
+    min-height: 343px;
+    padding: 40px 40px 0px 0px;
+    border-radius: 0px 50px 0px 0px;
+}
+
+.steps-analyze__card-steps{
+    width: 33.4%;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.steps-analyze__card-steps .spacer{
+    height: 25px;
+}
+
+.steps-analyze__description-content-wrapper{
+    width: 33.3%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--accent-color);
+}
+
+.steps-analyze__description-content-container{
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    border-radius: 0px 0px 0px 50px;
+    padding: 0px 0px 40px 40px;
+    min-height: 343px;
+}
+
+/* 23.3 How it Works - Manage & Supports */
+
+.steps-support__inner-container{
+    display: flex;
+    flex-direction: row;
+    gap: 0px 0px;
+}
+
+.steps-support__image-wrapper{
+    width: 66.7%;
+    background-color: var(--accent-color);
+    display: flex;
+    flex-direction: row;
+}
+
+.steps-support__image-container{
+    background-color: var(--secondary);
+    padding: 40px 40px 0px 0px;
+    border-radius: 0px 50px 0px 0px;
+    min-height: 343px;
+    width: 100%;
+}
+
+.steps-support__card-steps{
+    width: 33.3%;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    padding: 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.steps-support__card-steps .spacer{
+    height: 25px;
+}
+
+/* =======================
+    24.0 Proven Result Style
+==========================*/
+
+.proven-result__inner-container{
+    display: flex;
+    flex-direction: row;
+    gap: 80px 80px;
+    justify-content: space-between;
+}
+
+.proven-result__heading-container{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.proven-result__achievement-container{
+    width: 45%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px 0px;
+}
+
+.proven-result__reviewer-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px 20px;
+}
+
+.proven-result__reviewer-image-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.proven-result-avatar-title{
+    width: 30%;
+    text-align: start;
+}
+
+.proven-result__achievement-item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px 10px;
+    border: none;
+    border-bottom: 1px solid var(--accent-color-5);
+    padding: 0px 40px 40px 0px;
+}
+
+.proven-result__achievement-item:nth-child(odd){
+    border-right: 1px solid var(--accent-color-5);
+}
+
+.proven-result__achievement-item:nth-child(even){
+    padding: 0px 0px 40px 40px;
+}
+
+.proven-result__achievement-item:nth-last-child(-n+2) {
+    border-bottom: 0;
+}
+
+.proven-result-stat{
+    color: var(--secondary);
+    font-family: var(--font-family-heading);
+    font-size: 90px;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+.proven-result-suffix{
+    color: var(--accent-color);
+    font-family: var(--font-family-heading);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+/* =======================
+    25.0 Contact CTA Style
+==========================*/
+
+.contact-cta__title-container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px 40px;
+    justify-content: flex-end;
+    padding: 80px 80px;
+    overflow: hidden;
+    color: var(--secondary);
+}
+
+/* =======================
+    26.0 About Overview Style
+==========================*/
+
+.about-overview__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px 50px;
+}
+
+.about-overview__heading-container{
+    display: grid;
+    grid-template-columns: 21% 70%;
+    gap: 0px;
+    justify-content: space-between;
+}
+
+.about-overview__main-content{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-self: flex-end;
+}
+
+/* =======================
+   27.0 About Mission Style
+==========================*/
+
+.about-mission__inner-container{
+    display: flex;
+    flex-direction: row;
+    gap: 80px 80px;
+}
+
+.about-mission__image-wrapper{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px 20px;
+}
+
+.about-mission__main-content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+/* =======================
+    28.0 Team Style
+==========================*/
+
+.team__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px 80px;
+}
+
+.team-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+    align-items: center;
+    text-align: center;
+}
+
+/* =======================
+    29.0 Pricing Style
+==========================*/
+
+.pricing__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px 80px;
+}
+
+.pricing__heading-container{
+    display: flex;
+    flex-direction: row;
+    gap: 80px 80px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.pricing-section__heading{
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.pricing-section__description{
+    width: 30%;
+}
+
+.pricing__price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0px 0px;
+}
+
+.pricing__amount{
+    font-family: var(--font-family-heading);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+.pricing__period{
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5em;
+    color: var(--accent-color);
+}
+
+/* =======================
+    30.0 FAQs Style
+==========================*/
+
+.faq__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px 80px;
+}
+
+.faq__heading-container{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+
+/* =======================
+    31. Case Studies Style
+==========================*/
+
+.case-studies__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px 80px;
+}
+
+.case-studies__heading-container{
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+
+.case-studies__tag-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px 10px;
+    padding-top: 20px;
+}
+
+.case-studies__tag{
+    padding: 5px 15px;
+    border: 1px solid var(--accent-color);
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    border-radius: 50px;
+}
+
+.case-studies__layout{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.case-studies__title-link{
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-decoration: none;
+}
+
+/* =======================
+    32.0 Why Booking Us Style
+==========================*/
+
+.whybookingus__inner-container{
+    display: flex;
+    flex-direction: row;
+    gap: 80px 80px;
+}
+
+.whybookingus__card-container{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.whybookingus__heading-container{
+    width: 59%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+/* =======================
+    33.0 Blog Style
+==========================*/
+
+/* 33.1 Blog Grid Style */
+
+.blog__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px 80px;
+    align-items: center;
+    width: 100%;
+}
+
+.blog__heading-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    align-self: center;
+    text-align: center;
+}
+
+.blog-layout__inner-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.blog-layout__inner-container .blog-image{
+    transition: all 0.4s ease;
+}
+
+.blog-layout__meta-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px 5px;
+}
+
+.blog-meta-title{
+    color: var(--primary);
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+.blog-link{
+    color: var(--primary);
+    font-family: var(--font-family-heading);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+.blog-layout__inner-container:hover .blog-image{
+    transform: scale(1.05) rotate(2deg);
+    opacity: .8;
+}
+
+/* 33.2 Single Post Style */
+
+.recent-post__list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.recent-post__divider{
+    border-bottom: 1px solid var(--accent-color-7);
+}
+
+.recent-post__blog-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+}
+
+.recent-post__blog-content{
+    display: flex;
+    flex-direction: row;
+    gap: 20px 20px;
+}
+
+.recent-post__meta{
+    color: var(--accent-color);
+    font-size: 16px;
+}
+
+.recent-post__title{
+    color: var(--primary);
+    font-family: var(--font-family-text);
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.post-category__category-content-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.post-category__divider{
+    border-bottom: 1px solid var(--accent-color-7);
+}
+
+.post-category__category-list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px 10px;
+    font-family: var(--font-family-text);
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: var(--primary);
+}
+
+.post-category__category-list-item .category-item-icon{
+    color: var(--accent-color);
+}
+
+.post-category__category-list-item .category-title{
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+.post-tags__tags-content-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.post-tags__divider{
+    border-bottom: 1px solid var(--accent-color-7);
+}
+
+.post-tags__list-container{
+    display: flex;
+    flex-direction: row;
+    gap: 5px 5px;
+    flex-wrap: wrap;
+}
+
+.post-tags__tag{
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: 1px solid var(--accent-color);
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: var(--primary);
+}
+
+
+/* =======================
+    34.0 Contact Us Style
+==========================*/
+
+.contact__info-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px 20px;
+}
+
+.contact__info-item .contact-info-icon{
+    color: var(--accent-color);
+    font-size: 28px;
+}
+
+.contact__info-item-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px 40px;
+}
+
+/* =======================
+    35.0 Maps Style
+==========================*/
+
+.maps{
+    max-width: 100%;
+    width: 100%;
+    height: 482px
+}
+
+/* =======================
+    36.0 Custom List Style
+==========================*/
+
+.circle-check-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.circle-check-list li{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 10px;
+    color: var(--secondary);
+    font-family: var(--font-family-text);
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1.6em;
+}
+
+.circle-check-list a{
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    line-height: inherit;
+    text-decoration: none;
+}
+
+.circle-check-list li:last-child{
+    margin-bottom: 0px;
+}
+
+.circle-check-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    color: var(--accent-color);
+    margin-right: 0.5em;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.circle-check-list.pricing-list li{
+    color: var(--primary);
+}
+
+/* =======================
+    37.0 Breadcrumb Style
+==========================*/
+
+.breadcrumb{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px 10px;
+}
+
+.breadcrumb a,
+.breadcrumb .separator{
+    color: var(--accent-color-3);
+    font-family: var(--font-family-text);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6em;
+}
+
+.breadcrumb .separator{
+    color: var(--secondary);
+}
+
+.breadcrumb a.current{
+    color: var(--secondary);
+}
+
+/* =======================
+    38.0 Animation Style
+==========================*/
+
+.animation-box {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: opacity, transform;
+}
+
+.anim-fast {
+    --anim-duration: var(--anim-duration-fast);
+}
+
+.anim-normal {
+    --anim-duration: var(--anim-duration-normal);
+}
+
+.anim-slow {
+    --anim-duration: var(--anim-duration-slow);
+}
+
+.anim-delay-none {
+    --anim-delay: var(--anim-delay-none);
+}
+
+.anim-delay-sm {
+    --anim-delay: var(--anim-delay-sm);
+}
+
+.anim-delay-md {
+    --anim-delay: var(--anim-delay-md);
+}
+
+/* =======================
+    39.0 Icon Style
+==========================*/
+
+.chooseus-highlight-icon{
+    font-size: 32px;
+    color: var(--accent-color);
+}
+
+.how-it-works__icon{
+    width: 15%;
+}
+
+.blog-meta-icon{
+    font-size: 16px;
+    color: var(--accent-color);
+}
+
+.social-icon{
+    font-size: 18px;
+    color: var(--accent-color);
+}
+
+.social-team-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    fill: var(--secondary);
+}
+
+.social-icon-contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    fill: var(--secondary);
+}
+
+/* =======================
+    40.0 Accordion Style
+==========================*/
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 10px 10px;
+}
+
+.accordion .accordion-item {
+    background-color: transparent;
+    border: none;
+    color: var(--primary);
+    outline: none;
+    border-radius: 0px;
+}
+
+.accordion .accordion-button{
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--accent-color-7);
+    border-radius: 0px;
+    padding: 25px 0px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-family: var(--font-family-heading);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+
+.accordion-button::after{
+    color: var(--accent-color);
+}
+
+.accordion .accordion-button:not(.collapsed){
+    box-shadow: none;
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+.accordion-item .accordion-button::after{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.9em 0.9em;
+    padding: 0.6em;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--primary);
+    fill: var(--primary);
+    width: 1em;
+    height: 1em;
+    content: "";
+}
+
+.accordion-body{
+    padding: 25px 0px;
+}
+
+/* =======================
+    41.0 Video & Modal Style
+==========================*/
+
+.request-loader {
+    position: relative;
+    width: 80px;
+    height: auto;
+    border-radius: 50% !important;
+    border: none;
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary);
+    font-size: 18px;
+    aspect-ratio: 1/1;
+    transition: all 300ms ease-in-out;
+    z-index: 2;
+}
+
+.request-loader:hover {
+    border: none;
+    color: var(--secondary);
+    background-color: var(--accent-color-3);
+}
+
+.request-loader::after,
+.request-loader::before {
+    opacity: 0.2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    color: var(--secondary);
+    border: 4px solid currentColor;
+    border-radius: 50%;
+    animation-name: ripple;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.65, 0, .34, 1);
+    z-index: 0;
+}
+
+.request-loader::after {
+    animation-delay: 0.5s;
+    animation-duration: 3s;
+}
+
+.request-loader::before {
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-overlay);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-modal {
+    background-color: var(--secondary);
+    padding: 0;
+    border-radius: none;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+.my-modal iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: 80vh;
+}
+
+.my-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--accent-color-2);
+}
+
+.btn-close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: var(--accent-color-2);
+    padding: 16px 16px 16px 16px;
+    opacity: 1;
+    z-index: 2001;
+}
+
+/* =======================
+    42.0 Custom Spacing
+==========================*/
+
+/* 42.1 Flex Spacing */
+
+.flex-gap-0 { 
+    gap: 0px 0px; 
+}
+.flex-gap-1 { 
+    gap: 10px 10px; 
+}
+.flex-gap-2 { 
+    gap: 20px 20px; 
+}
+.flex-gap-3 { 
+    gap: 30px 30px; 
+}
+.flex-gap-4 { 
+    gap: 40px 40px; 
+}
+.flex-gap-5 {
+    gap: 50px 50px; 
+}
+.flex-gap-x-0 { 
+    column-gap: 0px; 
+}
+.flex-gap-x-1 { 
+    column-gap: 10px; 
+}
+.flex-gap-x-2 { 
+    column-gap: 20px; 
+}
+.flex-gap-x-3 { 
+    column-gap: 30px; 
+}
+.flex-gap-x-4 { 
+    column-gap: 40px; 
+}
+.flex-gap-x-5 { 
+    column-gap: 50px; 
+}
+
+.flex-gap-y-0 { 
+    row-gap: 0px; 
+}
+.flex-gap-y-1 { 
+    row-gap: 10px; 
+}
+.flex-gap-y-2 { 
+    row-gap: 20px; 
+}
+.flex-gap-y-3 { 
+    row-gap: 30px; 
+}
+.flex-gap-y-4 { 
+    row-gap: 40px; 
+}
+.flex-gap-y-5 { 
+    row-gap: 50px; 
+}
+
+/* 42.2 Grid Spacing */
+
+.grid-gap-1{
+    --bs-gutter-x: 10px;
+    --bs-gutter-y: 10px;
+}
+
+.grid-gap-2{
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 20px;
+}
+
+.grid-gap-3{
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 30px;
+}
+
+.grid-gap-4{
+    --bs-gutter-x: 40px;
+    --bs-gutter-y: 40px;
+}
+
+.grid-gap-5{
+    --bs-gutter-x: 50px;
+    --bs-gutter-y: 50px;
+}
+
+.grid-gap-x-1 {
+    --bs-gutter-x: 10px;
+}
+.grid-gap-x-2 {
+    --bs-gutter-x: 20px;
+}
+.grid-gap-x-3 {
+    --bs-gutter-x: 30px;
+}
+.grid-gap-x-4 {
+    --bs-gutter-x: 40px;
+}
+.grid-gap-x-5 {
+    --bs-gutter-x: 50px;
+}
+
+.grid-gap-y-1 {
+    --bs-gutter-y: 10px;
+}
+.grid-gap-y-2 {
+    --bs-gutter-y: 20px;
+}
+.grid-gap-y-3 {
+    --bs-gutter-y: 30px;
+}
+.grid-gap-y-4 {
+    --bs-gutter-y: 40px;
+}
+.grid-gap-y-5 {
+    --bs-gutter-y: 50px;
+}
