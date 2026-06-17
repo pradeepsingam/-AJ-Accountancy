@@ -1728,36 +1728,6 @@ button, a, .btn{
     font-size: 50px;
 }
 
-.card__single-service-cta{
-    background-image: url('../images/dummy-img-600x600.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 40px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px 30px;
-    color: var(--secondary);
-    position: relative;
-    z-index: 1;
-}
-
-.card__single-service-cta::before{
-    content: '';
-    position: absolute;
-    background-color: transparent;
-    background-image: linear-gradient(180deg, var(--accent-color-4) 0%, var(--accent-color-2) 100%);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.card__single-service-cta .spacer{
-    height: 160px;
-}
-
 .card__booking{
     display: flex;
     flex-direction: column;
@@ -2199,6 +2169,7 @@ button, a, .btn{
 
 .about-mission__image img{
     height: 650px;
+    border-radius: 5%;
 }
 
 .about-mission__image.offset-down{
@@ -2264,11 +2235,6 @@ button, a, .btn{
 
 .case-studies-image img{
     height: 380px;
-}
-
-.single-service-image img{
-    width: 100%;
-    height: 460px;
 }
 
 .single-post-image img{
@@ -2405,15 +2371,11 @@ button, a, .btn{
 }
 
 .banner-about{
-    background-image: url('../images/dummy-img-1920x900.jpg');
+    background-image: url('../images/header/aboutus_header.jpg');
 }
 
 .banner-service{
-    background-image: url('../images/dummy-img-1920x900.jpg');
-}
-
-.banner-single-service{
-    background-image: url('../images/dummy-img-1920x900.jpg');
+    background-image: url('../images/header/services_header.jpg');
 }
 
 .banner-pricing{
@@ -2445,7 +2407,7 @@ button, a, .btn{
 }
 
 .banner-contact{
-    background-image: url('../images/dummy-img-1920x900.jpg');
+    background-image: url('../images/header/contactus_header.jpg');
 }
 
 .banner-notfound{
@@ -2692,6 +2654,14 @@ button, a, .btn{
     gap: 80px 80px;
 }
 
+main > .section:has(.service-section-container){
+    padding-bottom: 60px;
+}
+
+main > .section:has(.steps-consultation__inner-container){
+    padding-top: 60px;
+}
+
 .service-section__heading-container{
     display: flex;
     flex-direction: row;
@@ -2735,6 +2705,30 @@ button, a, .btn{
     gap: 70px 70px;
 }
 
+.service-list-section .service-section__grid-layout{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.service-list-section .service-section__content-title{
+    flex: 1;
+    width: auto;
+}
+
+.service-category-heading{
+    grid-column: 1 / -1;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent-color-9);
+}
+
+.service-category-heading:first-child{
+    padding-top: 0;
+    border-top: 0;
+}
+
+.service-category-heading h3{
+    color: var(--primary);
+}
+
 .service-section__content-layout{
     display: flex;
     flex-direction: column;
@@ -2763,31 +2757,6 @@ button, a, .btn{
     color: var(--accent-color);
 }
 
-/* 18.2 Single Service Style */
-
-.single-service__recent-container{
-    display: flex;
-    flex-direction: column;
-    gap: 20px 20px;
-}
-
-.single-service__divider{
-    border-bottom: 1px solid var(--accent-color-7);
-}
-
-.single-service__recent-link-container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px 10px;
-}
-
-.single-service-cta__link-wrapper{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    color: var(--secondary);
-}
 
 /* =======================
    19.0 Company Intro Style
@@ -3634,6 +3603,29 @@ button, a, .btn{
     gap: 40px 40px;
 }
 
+.whatsapp-message-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 20px;
+}
+
+.whatsapp-message-option p{
+    color: var(--secondary);
+}
+
+.whatsapp-message-icon{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--secondary);
+    font-size: 40px;
+}
+
 /* =======================
     35.0 Maps Style
 ==========================*/
@@ -3770,6 +3762,19 @@ button, a, .btn{
 
 .how-it-works__icon{
     width: 15%;
+    aspect-ratio: 1/1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--accent-color-8);
+    color: var(--accent-color);
+    border: 1px solid rgba(14, 165, 233, 0.18);
+}
+
+.how-it-works__icon i{
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1;
 }
 
 .blog-meta-icon{

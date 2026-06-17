@@ -450,6 +450,9 @@
     .service-section__grid-layout{
         grid-template-columns: repeat(1, 1fr);
     }
+    .service-list-section .service-section__grid-layout{
+        grid-template-columns: repeat(1, 1fr);
+    }
     .service-section__cta-container{
         font-size: 14px;
     }
